@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//Klasa zawiera informacje o rakiecie i jej załodze
 class rocket
 {
 public:
@@ -12,6 +13,7 @@ public:
   string crewnumber;
   string crew[6];
 
+  //Funkcja wczytuje dane rakiety z pliku
   void loadrocket()
   {
     ifstream plik;
@@ -31,6 +33,7 @@ public:
     plik.close();
   }
 
+  //Funkcja wczytuje dane załogi z pliku
   void loadcrew()
   {
     ifstream plik;
