@@ -4,9 +4,12 @@
 ###Budowa formatu rakiety (plik rocket.csv)
 Nazwa
 Model
-Liczba członków załogi
+Liczba członków załogi (maks 6)
 
 ###Budowa załogi (plik crew.csv)
 Załogant 1
 Załogant 2
-...
+Załogant 3
+Załogant 4
+Załogant 5
+Załogant 6

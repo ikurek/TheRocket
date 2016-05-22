@@ -9,6 +9,8 @@ class start
 {
 public:
   string weather;
+  map <string, int> parts;
+  
 
 //Funkcja losuje warunki pogodowe
   void loadweather()
@@ -24,4 +26,6 @@ public:
     if (losowa == 6) weather = "Burza";
     if (losowa == 7) weather = "Silny wiatr";
   }
+
+  void loadparts()
 };
