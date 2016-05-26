@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <map>
 
 using namespace std;
 
@@ -10,9 +11,10 @@ class start
 public:
   string weather;
   map <string, int> parts;
-  
+  string damaged = "";
 
-//Funkcja losuje warunki pogodowe
+
+  //Funkcja losuje warunki pogodowe
   void loadweather()
   {
     srand(time(NULL));
@@ -27,5 +29,31 @@ public:
     if (losowa == 7) weather = "Silny wiatr";
   }
 
+  //Funkcja przypisuje do kolejnych elementów rakiety prawdopodobieństwo % ich uszkodzenia
   void loadparts()
+  {
+    parts["engine"] = 10;
+    parts["controls"] = 10;
+    parts["communication"] = 20;
+  }
+  //Funkcja sprawdza czy któryś z elementów został uszkodzony
+  void checkparts()
+  {
+    if(parts["engine"] < (rand() % 100 + 1))
+    {
+      damaged = damaged + "silnik; ";
+    }
+
+    if(parts["controls"] < (rand() % 100 + 1))
+    {
+      damaged = damaged + "układ sterujący; ";
+    }
+
+    if(parts["communication"] < (rand() % 100 + 1))
+    {
+      damaged = damaged + "systemy komunikacji; ";
+    }
+
+    if(damaged == "") damaged = "brak";
+  }
 };
