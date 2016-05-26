@@ -10,6 +10,7 @@ class start
 {
 public:
   string weather;
+  char temp;
   map <string, int> parts;
   string damaged = "";
 
@@ -32,28 +33,59 @@ public:
   //Funkcja przypisuje do kolejnych elementów rakiety prawdopodobieństwo % ich uszkodzenia
   void loadparts()
   {
-    parts["engine"] = 10;
-    parts["controls"] = 10;
-    parts["communication"] = 20;
+    parts["engine"] = 50;
+    parts["controls"] = 50;
+    parts["communication"] = 10;
   }
   //Funkcja sprawdza czy któryś z elementów został uszkodzony
   void checkparts()
   {
-    if(parts["engine"] < (rand() % 100 + 1))
+    srand( time( NULL ));
+    if(parts["engine"] > rand() % 100 + 1)
     {
       damaged = damaged + "silnik; ";
     }
 
-    if(parts["controls"] < (rand() % 100 + 1))
+    if(parts["controls"] > rand() % 100 + 1)
     {
       damaged = damaged + "układ sterujący; ";
     }
 
-    if(parts["communication"] < (rand() % 100 + 1))
+    if(parts["communication"] > rand() % 100 + 1)
     {
       damaged = damaged + "systemy komunikacji; ";
     }
 
     if(damaged == "") damaged = "brak";
+  }
+
+  //Funkcja zwraca false tylko jeżeli nie zostaną dokonane naprawy
+  bool fixdamaged(string damaged)
+  {
+    if (damaged != "brak")
+    {
+      cout << endl << "Dokonać wymaganych napraw? (t/n): ";
+      cin >> temp;
+
+      while(temp != 't' && temp !='n')
+      {
+        cout << "Nieprawidłowy wybór" << endl << "Dokonać wymaganych napraw? (t/n): ";
+        cin >> temp;
+      }
+
+      if (temp == 't')
+      {
+        cout << endl << "Naprawa w toku..." << endl;
+        sleep(3);
+        cout << endl << "Dokonano wymaganych napraw!" << endl;
+        return true;
+      }
+      else
+      {
+        cout << endl << "Start anulowany!" << endl;
+        return false;
+      }
+    }
+    else return true;
   }
 };

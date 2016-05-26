@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <ctime>
+#include <unistd.h>
 #include "rocket.h"
 #include "start.h"
 
@@ -10,7 +11,6 @@ using namespace std;
 int main(int argc, char** argsv)
 {
   srand( time( NULL ) );
-  char temp;
 
   cout << "Symulator rakiety! Yaaaaaaaay!" << endl << endl;
   //Zainicjuj klasę zawierającą informację o modelu rakiety
@@ -29,31 +29,22 @@ int main(int argc, char** argsv)
   cout << "Nazwa: " << rocket.name << endl << "Model: " << rocket.model << endl << "Liczba załogantów: " << rocket.crewnumber << endl << endl;
   cout << "Załoga w składzie:" << endl;
 
+  //Wyrzuć członków załogi
   for (int i = 0; i < atoi((rocket.crewnumber).c_str()); i++)
   {
     cout << i+1 << ". " << rocket.crew[i] << endl;
   }
 
+  //Wyrzuć pogodę
   cout << endl << "Pogoda: " << start.weather << endl;
-  cout << endl << "Trwa sprawdzanie wszystkich systemów..." << endl;
+  //Wyrzuć sprawdzenie systemów
+  cout << endl << "Trwa finalne sprawdzanie wszystkich systemów..." << endl;
+  sleep(3);
   cout << endl << "Wykryte usterki: " << start.damaged << endl;
-  cout << endl << "Dokonać wymaganych napraw? (t/n): ";
-  cin >> temp;
 
-  while(temp != 't' && temp !='n')
+  if (start.damaged != "brak")
   {
-      cout << "Nieprawidłowy wybór" << endl << "Dokonać wymaganych napraw? (t/n): ";
-      cin >> temp;
-  }
-
-  if (temp == 't')
-  {
-    cout << endl << "Dokonano wymaganych napraw!" << endl;
-  }
-  else
-  {
-    cout << endl << "Start anulowany!" << endl;
-    return 0;
+    if (start.fixdamaged(start.damaged) == false) return 0;
   }
 
 }
