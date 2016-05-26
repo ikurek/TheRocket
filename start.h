@@ -23,21 +23,24 @@ public:
 
     if (losowa == 1) weather = "Słonecznie";
     if (losowa == 2) weather = "Pochmurnie";
-    if (losowa == 3) weather = "Mgliście";
+    if (losowa == 3) weather = "Mgła";
     if (losowa == 4) weather = "Deszcz";
-    if (losowa == 5) weather = "Silny Deszcz";
+    if (losowa == 5) weather = "Silny deszcz";
     if (losowa == 6) weather = "Burza";
     if (losowa == 7) weather = "Silny wiatr";
   }
 
   //Funkcja przypisuje do kolejnych elementów rakiety prawdopodobieństwo % ich uszkodzenia
+  //TODO: wczytywanie prawdopodobieństw z csv
   void loadparts()
   {
     parts["engine"] = 50;
     parts["controls"] = 50;
     parts["communication"] = 10;
   }
+
   //Funkcja sprawdza czy któryś z elementów został uszkodzony
+  //TODO: dodać więcej elementów, uśrednić prawdopodobieństwa
   void checkparts()
   {
     srand( time( NULL ));

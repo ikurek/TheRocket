@@ -35,16 +35,26 @@ int main(int argc, char** argsv)
     cout << i+1 << ". " << rocket.crew[i] << endl;
   }
 
-  //Wyrzuć pogodę
+  //Wyrzuć pogodę i sprawdź czy może się odbyć start
   cout << endl << "Pogoda: " << start.weather << endl;
+  if(start.weather == "Silny deszcz" || start.weather == "Silny wiatr" || start.weather == "Burza" || start.weather == "Mgła")
+  {
+    cout << endl << "Pogoda uniemożliwiła start!" << endl;
+    return 0;
+  }
+
   //Wyrzuć sprawdzenie systemów
   cout << endl << "Trwa finalne sprawdzanie wszystkich systemów..." << endl;
   sleep(3);
   cout << endl << "Wykryte usterki: " << start.damaged << endl;
 
+  //Sprawdź czy użytkownik zdecyduje się naprawić usterki
+  //To prawdopodobnie najgorsza funkcja jaką kiedykolwiek zrobiłem
   if (start.damaged != "brak")
   {
     if (start.fixdamaged(start.damaged) == false) return 0;
   }
+
+
 
 }
