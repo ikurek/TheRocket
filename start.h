@@ -62,7 +62,7 @@ public:
     if(damaged == "") damaged = "brak";
   }
 
-  //Funkcja zwraca false tylko jeżeli nie zostaną dokonane naprawy
+  //Funkcja zwraca false tylko jeżeli NIE zostaną dokonane naprawy
   bool fixdamaged(string damaged)
   {
     if (damaged != "brak")

@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include "rocket.h"
 #include "start.h"
+#include "flight.h"
 
 using namespace std;
 
@@ -23,6 +24,9 @@ int main(int argc, char** argsv)
   start.loadweather();
   start.loadparts();
   start.checkparts();
+
+  //Zainicjuj klasę lotu
+  flight flight;
 
 
   //Wyrzuć początkowe informacje o rakiecie na ekran
@@ -55,6 +59,8 @@ int main(int argc, char** argsv)
     if (start.fixdamaged(start.damaged) == false) return 0;
   }
 
+  //Rozpoczęcie startu
+  flight.begin();
 
 
 }

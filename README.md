@@ -5,6 +5,7 @@
 Nazwa
 Model
 Liczba członków załogi (maks 6)
+Waga
 
 ###Budowa załogi (plik crew.csv)
 Załogant 1

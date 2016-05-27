@@ -10,6 +10,7 @@ class rocket
 public:
   string name;
   string model;
+  string weigth;
   string crewnumber;
   string crew[6];
 
@@ -24,6 +25,7 @@ public:
       getline(plik, name);
       getline(plik, model);
       getline(plik, crewnumber);
+      getline(plik, weigth);
     }
     else
     {
