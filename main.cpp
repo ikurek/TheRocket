@@ -61,6 +61,16 @@ int main(int argc, char** argsv)
 
   //Rozpoczęcie startu
   flight.begin();
+  if (flight.engine() == false)
+  {
+    cout << endl << "Piloci nie przeżyli wybuchu" << endl;
+    cout << endl << "Start nieudany" << endl;
+    return 0;
+  }
+  else
+  {
+    
+  }
 
 
 }
