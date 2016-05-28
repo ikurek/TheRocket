@@ -20,7 +20,7 @@ int main(int argc, char** argsv)
   rocket.loadcrew();
 
   //Zainicjuj klasę startu
-  start start;
+  Start start;
   start.loadweather();
   start.loadparts();
   start.checkparts();
