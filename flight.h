@@ -1,22 +1,12 @@
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
+#include <unistd.h>
 
 using namespace std;
 
-class flight
+class Flight
 {
 public:
-
-  void begin()
-  {
-    cout << endl << "Rozpoczynanie startu" << endl;
-    cout << "3" << endl;
-    sleep(1);
-    cout << "2" << endl;
-    sleep(1);
-    cout << "1" << endl;
-    sleep(1);
-    cout << endl << "Start rozpoczęty!" << endl;
-  }
+  void begin();
 };

@@ -26,7 +26,7 @@ int main(int argc, char** argsv)
   start.checkparts();
 
   //Zainicjuj klasę lotu
-  flight flight;
+  Flight flight;
 
 
   //Wyrzuć początkowe informacje o rakiecie na ekran
