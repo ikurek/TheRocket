@@ -15,7 +15,7 @@ int main(int argc, char** argsv)
 
   cout << "Symulator rakiety! Yaaaaaaaay!" << endl << endl;
   //Zainicjuj klasę zawierającą informację o modelu rakiety
-  rocket rocket;
+  Rocket rocket;
   rocket.loadrocket();
   rocket.loadcrew();
 
