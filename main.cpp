@@ -63,14 +63,16 @@ int main(int argc, char** argsv)
   flight.begin();
   if (flight.engine() == false)
   {
-    cout << endl << "Piloci nie przeżyli wybuchu" << endl;
     cout << endl << "Start nieudany" << endl;
     return 0;
   }
   else
   {
-    
+    cout << endl << "Silnik nośny aktywny" << endl;
   }
 
+  cout << endl << "Rozpoczęcie odłączania od platformy..." << endl;
+
+  flight.deattach();
 
 }

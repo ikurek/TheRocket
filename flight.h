@@ -8,6 +8,8 @@ using namespace std;
 class Flight
 {
 public:
+  int floatdegree = 0;
+
   void begin();
   bool engine();
   int deattach();

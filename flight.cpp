@@ -28,8 +28,19 @@ bool Flight::engine()
 
   if(rand() % 100 + 1 <= 5)
   {
-    cout << endl << "Nastąpiła eksplozja silnika!" << endl;
+    cout << endl << "Nastąpiła niekontrolowana eksplozja silnika!" << endl;
     return false;
+  }
+
+  if(rand() % 100 + 1 <= 25)
+  {
+    cout << endl << "Ciąg silnika zbyt niski" << endl;
+    return false;
+  }
+  else
+  {
+    cout << endl << "Ciąg silnika w normie" << endl;
+    return true;
   }
 
   return true;
@@ -39,7 +50,6 @@ bool Flight::engine()
 int Flight::deattach()
 {
   int counter = 0;
-  int floatdegree = 0;
 
   cout << endl << "Odczepianie chwytu nr. 1..." << endl;
   if(rand() % 100 + 1 <= 10)
@@ -62,7 +72,7 @@ int Flight::deattach()
     counter++;
   }
 
-  if (counter >= 2)
+  if (counter >= 1)
   {
     floatdegree = (rand() % 5 + 2) * counter;
     cout << endl << "Chwyty zakrzywiły trajektorię lotu o " << floatdegree << " stopni" << endl;
