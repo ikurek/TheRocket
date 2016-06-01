@@ -46,8 +46,9 @@ bool Flight::engine()
   return true;
 }
 
-//Funkcja
-int Flight::deattach()
+//Funkcja liczy prawdopodobieństwo nieudanego odczepienia haków startowych
+//Oraz spowodowane tym zakrzywienie toru lotu
+void Flight::deattach()
 {
   int counter = 0;
 
@@ -77,6 +78,4 @@ int Flight::deattach()
     floatdegree = (rand() % 5 + 2) * counter;
     cout << endl << "Chwyty zakrzywiły trajektorię lotu o " << floatdegree << " stopni" << endl;
   }
-
-  return floatdegree;
 }

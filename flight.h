@@ -12,5 +12,5 @@ public:
 
   void begin();
   bool engine();
-  int deattach();
+  void deattach();
 };
