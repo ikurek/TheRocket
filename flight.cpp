@@ -32,7 +32,7 @@ bool Flight::engine()
     return false;
   }
 
-  if(rand() % 100 + 1 <= 25)
+  if(rand() % 100 + 1 <= 10)
   {
     cout << endl << "Ciąg silnika zbyt niski" << endl;
     return false;
@@ -78,4 +78,27 @@ void Flight::deattach()
     floatdegree = (rand() % 5 + 2) * counter;
     cout << endl << "Chwyty zakrzywiły trajektorię lotu o " << floatdegree << " stopni" << endl;
   }
+}
+
+//Funkcja opisuje nadawanie rekiecie prawidłowej trajektorii
+//Zwraca flase jeżeli trajektoria nie pozwala na dalszy lot
+bool Flight::twist()
+{
+  int curve = (rand() % 130 + 110) - floatdegree;
+  cout << endl << "Próba nadania prawidłowej trajektorii lotu..." << endl;
+  cout << endl << "Planowy kąt obrotu: 120 stopni" << endl;
+  cout << endl << "Uzyskany kąt obrotu: " << curve << endl;
+
+  if (curve < 110 || curve > 130)
+  {
+    cout << endl << "Trajektora lotu uniemożliwia wyjście na orbitę!" << endl;
+    cout << endl << "Ewakuacja załogi..." << endl;
+    return false;
+  }
+  else
+  {
+    cout << endl << "Trajektoria mieści się w przewidywanych normach!" << endl;
+    return true;
+  }
+
 }

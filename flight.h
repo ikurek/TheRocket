@@ -13,4 +13,5 @@ public:
   void begin();
   bool engine();
   void deattach();
+  bool twist();
 };

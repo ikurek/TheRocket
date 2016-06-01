@@ -25,9 +25,9 @@ void Start::loadweather()
 //TODO: wczytywanie prawdopodobieństw z csv
 void Start::loadparts()
 {
-  parts["engine"] = 10;
-  parts["controls"] = 10;
-  parts["communication"] = 10;
+  parts["engine"] = 5;
+  parts["controls"] = 5;
+  parts["communication"] = 5;
 }
 
 //Funkcja sprawdza czy któryś z elementów został uszkodzony

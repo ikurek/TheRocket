@@ -6,6 +6,7 @@
 #include "rocket.h"
 #include "start.h"
 #include "flight.h"
+#include "AVS.h"
 
 using namespace std;
 
@@ -27,6 +28,9 @@ int main(int argc, char** argsv)
 
   //Zainicjuj klasę lotu
   Flight flight;
+
+  //Zainicjuj klasę zaawansowanego systemu symulacji wizualnej
+  AVS avs;
 
 
   //Wyrzuć początkowe informacje o rakiecie na ekran
@@ -75,4 +79,15 @@ int main(int argc, char** argsv)
 
   flight.deattach();
 
+  if (flight.twist() == false)
+  {
+    cout << endl << "Start nieudany" << endl;
+    return 0;
+  }
+  else
+  {
+    cout << endl << rocket.name << " porusza się po prawidłowym torze" << endl;
+  }
+
+  avs.printstart();
 }
