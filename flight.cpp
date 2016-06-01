@@ -84,7 +84,7 @@ void Flight::deattach()
 //Zwraca flase jeżeli trajektoria nie pozwala na dalszy lot
 bool Flight::twist()
 {
-  int curve = (rand() % 130 + 110) - floatdegree;
+  int curve = (rand() % 20 + 111) - floatdegree;
   cout << endl << "Próba nadania prawidłowej trajektorii lotu..." << endl;
   cout << endl << "Planowy kąt obrotu: 120 stopni" << endl;
   cout << endl << "Uzyskany kąt obrotu: " << curve << endl;

@@ -32,6 +32,7 @@ int main(int argc, char** argsv)
   //Zainicjuj klasę zaawansowanego systemu symulacji wizualnej
   AVS avs;
 
+  sleep(3);
 
   //Wyrzuć początkowe informacje o rakiecie na ekran
   cout << "Nazwa: " << rocket.name << endl << "Model: " << rocket.model << endl << "Liczba załogantów: " << rocket.crewnumber << endl << endl;
@@ -89,5 +90,4 @@ int main(int argc, char** argsv)
     cout << endl << rocket.name << " porusza się po prawidłowym torze" << endl;
   }
 
-  avs.printstart();
 }

@@ -9,4 +9,9 @@ class AVS
 public:
 
   void printstart();
+  void printEngineOn();
+  void printFlightOn();
+  void printBoom();
+  void printFly();
+  void printEvac();
 };
