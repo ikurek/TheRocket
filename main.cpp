@@ -32,8 +32,6 @@ int main(int argc, char** argsv)
   //Zainicjuj klasę zaawansowanego systemu symulacji wizualnej
   AVS avs;
 
-  sleep(3);
-
   //Wyrzuć początkowe informacje o rakiecie na ekran
   cout << "Nazwa: " << rocket.name << endl << "Model: " << rocket.model << endl << "Liczba załogantów: " << rocket.crewnumber << endl << endl;
   cout << "Załoga w składzie:" << endl;
@@ -54,7 +52,7 @@ int main(int argc, char** argsv)
 
   //Wyrzuć sprawdzenie systemów
   cout << endl << "Trwa finalne sprawdzanie wszystkich systemów..." << endl;
-  sleep(3);
+  sleep(1);
   cout << endl << "Wykryte usterki: " << start.damaged << endl;
 
   //Sprawdź czy użytkownik zdecyduje się naprawić usterki
@@ -69,6 +67,13 @@ int main(int argc, char** argsv)
   if (flight.engine() == false)
   {
     cout << endl << "Start nieudany" << endl;
+    cout << endl << "Symulacja wizualna: " << endl;
+    sleep(3);
+    avs.printstart();
+    sleep(1);
+    avs.printEngineOn();
+    sleep(1);
+    avs.printBoom();
     return 0;
   }
   else
@@ -83,11 +88,40 @@ int main(int argc, char** argsv)
   if (flight.twist() == false)
   {
     cout << endl << "Start nieudany" << endl;
+    cout << endl << "Symulacja wizualna: " << endl;
+    sleep(3);
+
+    avs.printstart();
+    sleep(2);
+    avs.printEngineOn();
+    sleep(2);
+    avs.printFlightOn();
+    sleep(2);
+    avs.printFly();
+    sleep(2);
+    avs.printEvac();
+    sleep(2);
+
     return 0;
   }
   else
   {
     cout << endl << rocket.name << " porusza się po prawidłowym torze" << endl;
+    cout << endl << "Start udany!" << endl;
+    cout << endl << "Symulacja wizualna: " << endl;
+    sleep(3);
+
+    avs.printstart();
+    sleep(2);
+    avs.printEngineOn();
+    sleep(2);
+    avs.printFlightOn();
+    sleep(2);
+    avs.printFly();
+    sleep(2);
+    avs.printSpace();
+    sleep(2);
+
   }
 
 }

@@ -131,3 +131,24 @@ void AVS::printEvac()
   }
   plik.close();
 }
+
+void AVS::printSpace()
+{
+  ifstream plik;
+  string linia;
+  plik.open("Space.txt");
+
+  if(plik.is_open())
+  {
+    while(!plik.eof())
+    {
+      getline(plik, linia);
+      cout << linia << endl;
+    }
+  }
+  else
+  {
+    cout << endl << "O nie! System zaawansowanej symulacji wizualnej zawiódł!" << endl;
+  }
+  plik.close();
+}

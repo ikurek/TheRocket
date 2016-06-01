@@ -14,4 +14,5 @@ public:
   void printBoom();
   void printFly();
   void printEvac();
+  void printSpace();
 };
